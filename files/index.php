@@ -10,13 +10,16 @@
 </head>
 <body>
     <?php
-        if($_post){
+        if($_POST){
 
         }else{
             echo "<form action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
             echo "<input type='text' name='nome'>";
-            echo "<label class='testo'></label";
+            echo "<label class='testo'>Inserisci il tuo cognome</label>";
+            echo "<input type='text' name='cognome'>";
+            echo "<label class='testo'>Inserisci il tuo codice fiscale</label>";
+            echo "<input type='text' name='cf'>";
         }
     ?>
     
