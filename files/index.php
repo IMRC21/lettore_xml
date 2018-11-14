@@ -13,9 +13,12 @@
     <?php
         if($_POST){
             $nome = $_POST["nome"];
-            echo $nome;
             $cognome = $_POST["cognome"];
             $cf = $_POST["cf"];
+            $nomeFile = $_POST["esp"] . ".xml";
+            echo $nomeFile;
+
+            $file = file_put_contents($nomeFile,"ciao");
         }else{
             echo "<form action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
@@ -24,6 +27,8 @@
             echo "<input type='text' name='cognome'>";
             echo "<label class='testo'>Inserisci il tuo codice fiscale</label>";
             echo "<input type='text' name='cf'>";
+            echo "<label class='testo'>Inserisci il nome di questa esportazione</label>";
+            echo "<input type='text' name='esp' value='default'>";
             echo "<input type='submit'>";
             echo "</form>";
         }
