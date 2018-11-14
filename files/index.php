@@ -16,9 +16,11 @@
             $cognome = $_POST["cognome"];
             $cf = $_POST["cf"];
             $nomeFile = $_POST["esp"] . ".xml";
-            echo $nomeFile;
-
-            $file = file_put_contents($nomeFile,"ciao");
+            $stdRiga = "<?xml version='1.0' encoding='UTF-8'?>"; 
+            $secondaRiga = "<untag> Ciao </untag>";
+            $spazio = "<![CDATA[<br />]]>";
+            $stdRiga = $stdRiga . $spazio . $secondaRiga;
+            $file = file_put_contents($nomeFile,$stdRiga);
         }else{
             echo "<form action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
