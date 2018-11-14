@@ -15,6 +15,7 @@
             $nome = $_POST["nome"];
             echo $nome;
             $cognome = $_POST["cognome"];
+            echo $cognome;
             $cf = $_POST["cf"];
         }else{
             echo "<form action='index.php' method='POST'>";
