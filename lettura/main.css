@@ -1,3 +1,18 @@
 .testo{
     display: block;
 }
+p{
+    padding: 0;
+    margin: 0;
+}
+.head{   
+    color: #b9436e;
+}
+.tag{
+    color: #7b7fff;
+    margin-left: 2%;
+}
+.tagEnd{
+    color: #7b7fff;
+}
+

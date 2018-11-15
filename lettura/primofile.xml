@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<persona>
-    <nome>Omar</nome>
-    <cognome>Cavazza</cognome>
-    <cf>CVZTMS00B20I775X</cf>
-    <data>34234</data>
-</persona>
-<persona>
-    <nome>Cioanka</nome>
-    <cognome>Ionut</cognome>
-    <cf>XDPROVA123CHD3</cf>
-    <data>34234</data>
-</persona>
-<persona>
-    <nome>Cioanka</nome>
-    <cognome>Ionut</cognome>
-    <cf>XDPROVA123CHD3</cf>
-    <data>34234</data>
-</persona>
-<persona>
-    <nome>Cioanka</nome>
-    <cognome>Ionut</cognome>
-    <cf>XDPROVA123CHD3</cf>
-    <data>34234</data>
-</persona>
+
+<condominio>
+    <casa>1</casa>
+    <tipologia>Appartamento</tipologia>
+    <stanze>5</stanze>
+    <via>Tiede</via>
+</condominio>
+<condominio>
+    <casa>2</casa>
+    <tipologia>Appartamento</tipologia>
+    <stanze>5</stanze>
+    <via>Tiede</via>
+</condominio>
+<condominio>
+    <casa>3</casa>
+    <tipologia>Appartamento</tipologia>
+    <stanze>5</stanze>
+    <via>Tiede</via>
+</condominio>
+
+
