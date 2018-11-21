@@ -1,3 +1,22 @@
 .testo{
     display: block;
+    outline: none;
+
+}
+
+#ilForm{
+    display: inline-block;
+    width: 300px;
+    background-color: red;
+}
+
+.contenitore{
+    display: inline-block;
+}
+
+#aggiungi-elemento{
+    display: inline-block;
+    width: 300px;
+    height: 220px;
+    background-color: green;
 }
