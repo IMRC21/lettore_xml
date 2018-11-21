@@ -14,6 +14,7 @@
         if($_POST){
             $nome = $_POST["nome"];
             $cognome = $_POST["cognome"];
+            echo $cognome;
             $cf = $_POST["cf"];
             $nomeFile = $_POST["esp"] . ".xml";
             $stdRiga = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL; 

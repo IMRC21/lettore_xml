@@ -1,0 +1,36 @@
+.testo{
+    display: block;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.head{   
+    color: #b9436e;
+}
+.tag{
+    color: #7b7fff;
+    margin-left: 2%;
+}
+.tagEnd{
+    color: #7b7fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #b9436e;
+    color: white;
+}
+
