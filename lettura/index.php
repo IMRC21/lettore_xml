@@ -26,16 +26,35 @@
                     $oggetto[$i][$tag[$c]] = "";
                 }
             }
+
+            echo "<table>";
             for($i=1;$i<count($oggetto)+1;$i++){
-                echo "<span class='head'>".htmlspecialchars("<".$tag[1].">")."</span>"."<br>";
-                for ($c=2; $c<count($tag); $c++) { 
-                    echo "<span class='tag'>".htmlspecialchars("<".$tag[$c].">")."</span>";
-                    echo $oggetto[$i][$tag[$c]][1];
-                    echo "<span class='tagEnd'>".htmlspecialchars("</".$tag[$c].">")."</span>"."<br>";
+                echo "<th>".strtoupper($tag[1])."</th>";
+                for ($c=3; $c<count($tag); $c++) {
+                    echo "<th></th>";
                 }
-                echo "<span class='head'>".htmlspecialchars("</".$tag[1].">")."</span>"."<br>";
-                echo "<br>";
+                echo "<tr>";
+                for ($c=2; $c<count($tag); $c++) {
+                    echo "<td>".$tag[$c]." </td>";
+                }
+                echo "</tr><tr>";
+                for ($c=2; $c<count($tag); $c++) {
+                    echo "<td>".$oggetto[$i][$tag[$c]][1]." </td>";
+                }
+                echo "</tr>";
             }
+            echo "</table>";
+
+            for($i=1;$i<count($oggetto)+1;$i++){
+                 echo "<br><span class='head'>".htmlspecialchars("<".$tag[1].">")."</span>"."<br>";
+                 for ($c=2; $c<count($tag); $c++) { 
+                     echo "<span class='tag'>".htmlspecialchars("<".$tag[$c].">")."</span>";
+                     echo $oggetto[$i][$tag[$c]][1];
+                     echo "<span class='tagEnd'>".htmlspecialchars("</".$tag[$c].">")."</span>"."<br>";
+                 }
+                 echo "<span class='head'>".htmlspecialchars("</".$tag[1].">")."</span>"."<br>";
+             }
+            
 
             
         }else{

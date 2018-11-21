@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<condominio>
-    <casa>1</casa>
-    <tipologia>Appartamento</tipologia>
-    <stanze>5</stanze>
-    <via>Tiede</via>
-</condominio>
-<condominio>
-    <casa>2</casa>
-    <tipologia>Appartamento</tipologia>
-    <stanze>5</stanze>
-    <via>Tiede</via>
-</condominio>
-<condominio>
-    <casa>3</casa>
-    <tipologia>Appartamento</tipologia>
-    <stanze>5</stanze>
-    <via>Tiede</via>
-</condominio>
-
+<persona>
+    <nome>Omar</nome>
+    <cognome>Tessarini</cognome>
+    <cf>CBHDBJNOJN54</cf>
+</persona>
+<persona>
+    <nome>Islam</nome>
+    <cognome></cognome>
+    <cf></cf>
+</persona>
 
