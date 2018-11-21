@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 </head>
 <body>
-<div id="nuovo-el">
-</div>
     <?php
         if($_POST){
             $nome = $_POST["nome"];
@@ -27,7 +25,8 @@
             $stdRiga = $stdRiga . $apriTagPersona . $nomeStampa .$cognomeStampa . $cfStampa . $chiudiTagPersona;
             $file = file_put_contents($nomeFile,$stdRiga);
         }else{
-            echo "<form action='index.php' method='POST'>";
+            echo "<div class='contenitore'>";
+            echo "<form id='ilForm' action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
             echo "<input type='text' name='nome'>";
             echo "<label class='testo'>Inserisci il tuo cognome</label>";
@@ -39,6 +38,8 @@
             echo "<input class='testo' type='button' onclick='aggiungi()' value='Aggiungi un campo'>";
             echo "<input type='submit'>";
             echo "</form>";
+            echo "</div>";
+            echo "<div id='aggiungi-elemento'></div>";
         }
     ?>
     
