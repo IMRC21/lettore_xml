@@ -1,20 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Scrivi o Leggi file XML</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="item">
-            Leggi
+    <div id="switch">
+        <div class="inner-container">
+            <div class="toggle">
+                <p>Simple XML</p>
+            </div>
+            <div class="toggle">
+                <p>File_Content</p>
+            </div>
+
         </div>
-        <div class="item">
-            Scrivi
+        <div class="inner-container" id='toggle-container'>
+            <div class="toggle">
+                <p>Simple XML</p>
+            </div>
+            <div class="toggle">
+                <p>File_Content</p>
+            </div>
+
         </div>
     </div>
+    <div class="container">
+        <div class="vecchio">
+            <div class="header">
+                <h1>File_Content method</h1>
+            </div>
+            <div class="item">
+                <a href="./Vecchio/lettura/index.php">Leggi</a>
+            </div>
+            <div class="item">
+                <a href="./Vecchio/files/index.php">Scrivi</a>
+            </div>
+        </div>
+        <div class="simple">
+            <div class="header">
+                <h1>Simple XML Method</h1>
+            </div>
+            <div class="item">
+                <a href="./Simple_xml/lettura/index.php">Leggi</a>
+            </div>
+            <div class="item">
+                <a href="./Simple_xml/scrittura/index.php">Scrivi</a>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
+
 </html>
