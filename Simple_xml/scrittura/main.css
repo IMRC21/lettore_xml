@@ -1,19 +1,99 @@
-.testo{
+html,
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+	height: 100%;
+  	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#form{
+	width: 20%;
+	border-radius: 8px;
+	border: none;
+	text-align: center;
+	color: black;
+	font-family: sans-serif;
+	font-size: 36px;
+	padding: 16px 32px;
+	background-color: tomato;
+}
+
+input{
+	width: 100%;
+}
+
+input[type=text]{
+	background-color: white;
+	text-decoration: none;
+	border-radius: 8px;
+	border: none;
+	padding: 16px 0px;
+	font-size: .6em;
+	text-align: center;
+}
+
+input[type=submit]{
+	background-color: green;
+	text-decoration: none;
+	border-radius: 8px;
+	margin-top: 15px;
+	border: none;
+	color: white;
+	width: 48%;
+	padding: 1%;
+	font-size: .8em;
+
+}
+
+#aggiungi-elementi{
+	background-color: rgb(255, 174, 0);
+	text-decoration: none;
+	border-radius: 8px;
+	margin-top: 15px;
+	border: none;
+	color: white;
+	width: 48%;
+	padding: 1%;
+    font-size: .8em;
     display: block;
-    outline: none;
 }
 
-.iForm{
-    display: inline-block;
-    width: 300px;
-    padding: 3%;
-    border: 2px solid black;
+#aggiungi{
+	background-color: rgb(255, 174, 0);
+	text-decoration: none;
+	border-radius: 8px;
+	margin-top: 15px;
+	border: none;
+	color: white;
+	width: 30%;
+	padding: 1%;
+    font-size: .8em;
 }
 
-.contenitore{
-    display: inline;
+label{
+    display: block;
+	font-size: .6em;
 }
 
-.fuori-form{
-    display: absolute;
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
 }

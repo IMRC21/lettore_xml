@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<a href="../../index.html"><button class="btn"><i class="fa fa-home"></i></button></a>
+<div class="container">
     <?php
         if($_POST){
             $percorso = $_POST["file"];
@@ -27,12 +30,12 @@
              }
              echo "</table>";
         }else{
-            echo "<form action='index.php' method='POST'>";
+            echo "<div id='form'><form action='index.php' method='POST'>";
             echo "<input type='file' name='file'>";
             echo "<input type='submit'>";
-            echo "</form>";
+            echo "</form></div>";
         }
     ?>
-    
+    </div>
 </body>
 </html>

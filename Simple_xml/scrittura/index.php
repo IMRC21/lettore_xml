@@ -8,8 +8,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<a href="../../index.html"><button class="btn"><i class="fa fa-home"></i></button></a>
+    <div class="container">
     <?php
         if($_POST){
             $nome = array($_POST["nome"]);
@@ -76,7 +79,7 @@
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
             header("Location: ../../assets/end.html");
         }else{
-            echo "<form class='iForm' id='il-form' action='index.php' method='POST'>";
+            echo "<div id='form'><form class='iForm' id='il-form' action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
             echo "<input type='text' name='nome'>";
             echo "<label class='testo'>Inserisci il tuo cognome</label>";
@@ -92,10 +95,11 @@
             echo "<label class='testo'>Numero di persone inserite: </label>";
             echo "<input id='aggiungi-elementi' type='text' name='nrPersone' value='1' >";
             echo "<input type='submit'>";
-            echo "</form>";
+            echo "</form></div>";
             echo "<div id='posto-nuovo'></div>";
-            echo "<button onClick='laFunzione()'>AGGIUNGI UN ELEMENTO</button>";
+            echo "<button onClick='laFunzione()' id='aggiungi'>AGGIUNGI UN ELEMENTO</button>";
         }
     ?>
+    </div>
 </body>
 </html>
