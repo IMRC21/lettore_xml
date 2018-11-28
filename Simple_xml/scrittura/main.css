@@ -13,3 +13,7 @@
 .contenitore{
     display: inline;
 }
+
+.fuori-form{
+    display: absolute;
+}

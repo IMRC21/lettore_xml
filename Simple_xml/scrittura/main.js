@@ -12,7 +12,7 @@ function laFunzione(){
         "<input type='text' name='cognome" + incrementaNumeroEsportazioni + "'>" +
         "<label class='testo'>Inserisci il tuo codice fiscale</label>" +
         "<input type='text' name='cf"+ incrementaNumeroEsportazioni +"'>";
-    stampa = document.getElementById("posto-nuovo");
+    stampa = document.getElementById("il-form");
     stampa.innerHTML = stampa.innerHTML + costruisciOutput;
     
 
