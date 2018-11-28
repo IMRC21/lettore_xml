@@ -17,7 +17,6 @@
             $cf = array($_POST["cf"]);
             $nomeFile = $_POST["esp"] . ".xml";
             $personeInserite = $_POST["nrPersone"];
-
             if($personeInserite > 1){
                 //Carica più persone
                 Echo "Si, ci sono più persone".PHP_EOL;
@@ -33,7 +32,6 @@
                 // echo "<br>";
                 // print_r($cf);
             }
-
             //Una base di partenza per il file XML in caso non esista già
             $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL."<persone>".PHP_EOL."</persone>";
             //se il file esiste e non è vuoto allora gli elementi si andranno ad aggiungere in coda
@@ -62,7 +60,6 @@
                         $persona->addChild("cf", $cf[$contatore]);
                         $contatore++;
                     }
-                    
                 }//Chiuso IF FILE NOT NULL
                 $contatore = 0;
             }else{
@@ -85,16 +82,12 @@
             echo "<input type='text' name='cognome'>";
             echo "<label class='testo'>Inserisci il tuo codice fiscale</label>";
             echo "<input type='text' name='cf'>";
-
             //da levare
             echo "<center>";
-
             echo "<label class='fuori-form' class='testo'>Inserisci il nome di questa esportazione</label>";
-            echo "<input class='fuori-form' type='text' name='esp' value='default'>";
-            
+            echo "<input class='fuori-form' type='text' name='esp' value='default'>";       
             //da levare
             echo "</center>";
-            
             echo "<label class='testo'>Numero di persone inserite: </label>";
             echo "<input id='aggiungi-elementi' type='text' name='nrPersone' value='1' >";
             echo "<input type='submit'>";
@@ -103,6 +96,5 @@
             echo "<button onClick='laFunzione()'>AGGIUNGI UN ELEMENTO</button>";
         }
     ?>
-    
 </body>
 </html>
