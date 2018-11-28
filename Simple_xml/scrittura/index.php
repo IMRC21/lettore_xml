@@ -12,58 +12,69 @@
 <body>
     <?php
         if($_POST){
-            $str = $_POST["nome"];
-            $nome = array("ciao");
-            $nome[0] = $str;
-            
+            $nome = array($_POST["nome"]);
             $cognome = array($_POST["cognome"]);
             $cf = array($_POST["cf"]);
             $nomeFile = $_POST["esp"] . ".xml";
             $personeInserite = $_POST["nrPersone"];
-            print_r($nome);
 
             if($personeInserite > 1){
                 //Carica più persone
                 Echo "Si, ci sono più persone".PHP_EOL;
                 for($ct = 2; $ct <= $personeInserite; $ct ++){
-                    array_push($nome,$_POST["nome"+ $ct]); 
-                    echo $nome[$ct-1];
+                    array_push($nome,$_POST["nome" . $ct]); 
+                    array_push($cognome,$_POST["cognome". $ct]);
+                    array_push($cf, $_POST["cf" . $ct]);
                 }
+                // De-commentare per stampare gli array
+                // print_r($nome);
+                // echo "<br>";
+                // print_r($cognome);
+                // echo "<br>";
+                // print_r($cf);
             }
 
             //Una base di partenza per il file XML in caso non esista già
             $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL."<persone>".PHP_EOL."</persone>";
             //se il file esiste e non è vuoto allora gli elementi si andranno ad aggiungere in coda
             if(file_exists($nomeFile)){
+                $contatore = 0;
                 $filePreEsistente = file_get_contents($nomeFile);
                 if($filePreEsistente != ""){
                     $xmlObj = new SimpleXMLElement($filePreEsistente);
                     echo "Il file esiste e non è vuoto";
                     //Bisogna solo aggiungere 
-                    $persona = $xmlObj->addChild("persona");
-                    $persona->addChild("nome", $nome);
-                    $persona->addChild("cognome", $cognome);
-                    $persona->addChild("cf", $cf);
-
+                    foreach($nome as $n){
+                        $persona = $xmlObj->addChild("persona");
+                        $persona->addChild("nome", $n);
+                        $persona->addChild("cognome", $cognome[$contatore]);
+                        $persona->addChild("cf", $cf[$contatore]);
+                        $contatore++;
+                    }//Fine foreach
                 }else{
                     //Il file esiste ma è vuoto
                     echo "Il file esiste ma è vuoto";
                     $xmlObj = new SimpleXMLElement($xmlBase);
-                    $persona = $xmlObj->addChild("persona");
-                    $persona->addChild("nome", $nome);
-                    $persona->addChild("cognome", $cognome);
-                    $persona->addChild("cf", $cf);
+                    foreach($nome as $n){
+                        $persona = $xmlObj->addChild("persona");
+                        $persona->addChild("nome", $n);
+                        $persona->addChild("cognome", $cognome[$contatore]);
+                        $persona->addChild("cf", $cf[$contatore]);
+                        $contatore++;
+                    }
                     
                 }//Chiuso IF FILE NOT NULL
+                $contatore = 0;
             }else{
                 //Il file non esiste
                 echo("Il file non esiste");
-                $xmlObj = new SimpleXMLElement($xmlBase);
-                $persona = $xmlObj->addChild("persona");
-                $persona->addChild("nome", $nome);
-                $persona->addChild("cognome", $cognome);
-                $persona->addChild("cf", $cf);
-                
+                foreach($nome as $n){
+                    $persona = $xmlObj->addChild("persona");
+                    $persona->addChild("nome", $n);
+                    $persona->addChild("cognome", $cognome[$contatore]);
+                    $persona->addChild("cf", $cf[$contatore]);
+                    $contatore++;
+                }
             }//Chiuso IF FILE EXISTS
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
         }else{
