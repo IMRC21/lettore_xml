@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<persona>
-    <nome>Omar</nome>
-    <cognome>Tessarini</cognome>
-    <cf>CBHDBJNOJN54</cf>
-</persona>
-<persona>
-    <nome>Islam</nome>
-    <cognome></cognome>
-    <cf></cf>
-</persona>
-
+<persone>
+    <persona>
+        <griso>Omar</griso>
+        <cognome>Tessarini</cognome>
+        <cf>CBHDBJNOJN54</cf>
+        <prova>Bella Omar</prova>
+    </persona>
+    <persona>
+        <griso>Islam</griso>
+        <cognome></cognome>
+        <cf>Okkk</cf>
+    </persona>
+    <persona>
+        <griso>Tommaso</griso>
+        <cognome>Cavazza</cognome>
+        <cf>Okkk</cf>
+        <prova>Bella Omar</prova>
+    </persona>
+</persone>
