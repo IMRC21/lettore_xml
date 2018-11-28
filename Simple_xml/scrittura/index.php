@@ -12,46 +12,44 @@
 <body>
     <?php
         if($_POST){
-            /*
             $nome = $_POST["nome"];
             $cognome = $_POST["cognome"];
-            echo $cognome;
             $cf = $_POST["cf"];
             $nomeFile = $_POST["esp"] . ".xml";
-            $stdRiga = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL; 
-            $root = "<persone>".PHP_EOL;
-            $closeRoot ="</persona>".PHP_EOL;
-            $apriTagPersona = "<persona>".PHP_EOL;
-            $chiudiTagPersona = "</persona>".PHP_EOL;
-            $nomeStampa = "<nome>" . $nome . "</nome>".PHP_EOL;
-            $cognomeStampa = "<cognome>" . $cognome . "</cognome>".PHP_EOL;
-            $cfStampa = "<cf>" . $cf . "</cf>".PHP_EOL;
-            $stdRiga = $stdRiga . $root . $apriTagPersona . $nomeStampa .$cognomeStampa . $cfStampa . $chiudiTagPersona . $closeRoot;
-            $file = file_put_contents($nomeFile,$stdRiga);
-            */
-            $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>
-<persone>
-</persone>
+            //Una base di partenza per il file XML in caso non esista già
+            $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL."<persone>".PHP_EOL."</persone>";
+            //se il file esiste e non è vuoto allora gli elementi si andranno ad aggiungere in coda
+            if(file_exists($nomeFile)){
+                $filePreEsistente = file_get_contents($nomeFile);
+                if($filePreEsistente != ""){
+                    $xmlObj = new SimpleXMLElement($filePreEsistente);
+                    echo "Il file esiste e non è vuoto";
+                    //Bisogna solo aggiungere 
+                    $persona = $xmlObj->addChild("persona");
+                    $persona->addChild("nome", $nome);
+                    $persona->addChild("cognome", $cognome);
+                    $persona->addChild("cf", $cf);
 
-            ";
-            $nome = $_POST["nome"];
-            $cognome = $_POST["cognome"];
-            echo $cognome;
-            $cf = $_POST["cf"];
-            $nomeFile = $_POST["esp"] . ".xml";
-            $xmlObj = new SimpleXMLElement($xmlBase);
-            
-            
-            $persona = $xmlObj->addChild("persona");
-            $persona->addChild("nome", $nome);
-            $persona->addChild("cognome", $cognome);
-            $persona->addChild("cf", $cf);
-
-            $persona = $xmlObj->addChild("persona");
-            $persona->addChild("nome", $nome);
-            $persona->addChild("cognome", $cognome);
-            $persona->addChild("cf", $cf);
-            
+                }else{
+                    //Il file esiste ma è vuoto
+                    echo "Il file esiste ma è vuoto";
+                    $xmlObj = new SimpleXMLElement($xmlBase);
+                    $persona = $xmlObj->addChild("persona");
+                    $persona->addChild("nome", $nome);
+                    $persona->addChild("cognome", $cognome);
+                    $persona->addChild("cf", $cf);
+                    
+                }//Chiuso IF FILE NOT NULL
+            }else{
+                //Il file non esiste
+                echo("Il file non esiste");
+                $xmlObj = new SimpleXMLElement($xmlBase);
+                $persona = $xmlObj->addChild("persona");
+                $persona->addChild("nome", $nome);
+                $persona->addChild("cognome", $cognome);
+                $persona->addChild("cf", $cf);
+                
+            }//Chiuso IF FILE EXISTS
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
         }else{
             echo "<form id='ilForm' action='index.php' method='POST'>";

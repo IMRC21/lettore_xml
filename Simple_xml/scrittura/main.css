@@ -1,0 +1,21 @@
+.testo{
+    display: block;
+    outline: none;
+
+}
+
+#ilForm{
+    display: inline-block;
+    width: 300px;
+}
+
+.contenitore{
+    display: inline;
+}
+
+#aggiungi-elemento{
+    display: inline;
+    width: 300px;
+    height: 220px;
+    background-color: green;
+}
