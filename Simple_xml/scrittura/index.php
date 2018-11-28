@@ -62,10 +62,11 @@
             echo "<label class='testo'>Inserisci il nome di questa esportazione</label>";
             echo "<input type='text' name='esp' value='default'>";
             echo "<label class='testo'>Numero di persone inserite: </label>";
-            echo "<input type='text' name='nrPersone' value='1' disabled>";
+            echo "<input id='aggiungi-elementi' type='number' name='nrPersone' value='1'>";
             echo "<input type='submit'>";
             echo "</form>";
-            echo "<div id='aggiungi-elemento'></div>";
+            echo "<div id='posto-nuovo'></div>";
+            echo "<button onClick='laFunzione()'>AGGIUNGI UN ELEMENTO</button>";
         }
     ?>
     
