@@ -17,14 +17,14 @@ a{
 }
 
 .vecchio,.simple{
-		text-align: center;
-		color: black;
-		font-family: sans-serif;
-		font-size: 36px;
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-    	justify-content: center;
+	text-align: center;
+	color: black;
+	font-family: sans-serif;
+	font-size: 36px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
 }
 
 .item {
