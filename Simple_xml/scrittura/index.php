@@ -16,6 +16,13 @@
             $cognome = $_POST["cognome"];
             $cf = $_POST["cf"];
             $nomeFile = $_POST["esp"] . ".xml";
+            
+
+            if($_POST["nrPersone"] > 1){
+                //Carica più persone
+                Echo "Si, ci sono più persone".PHP_EOL;
+            }
+
             //Una base di partenza per il file XML in caso non esista già
             $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL."<persone>".PHP_EOL."</persone>";
             //se il file esiste e non è vuoto allora gli elementi si andranno ad aggiungere in coda
@@ -59,7 +66,7 @@
             echo "<input type='text' name='cognome'>";
             echo "<label class='testo'>Inserisci il tuo codice fiscale</label>";
             echo "<input type='text' name='cf'>";
-            
+
             //da levare
             echo "<center>";
 
@@ -70,7 +77,7 @@
             echo "</center>";
             
             echo "<label class='testo'>Numero di persone inserite: </label>";
-            echo "<input id='aggiungi-elementi' type='number' name='nrPersone' value='1'>";
+            echo "<input id='aggiungi-elementi' type='text' name='nrPersone' value='1' >";
             echo "<input type='submit'>";
             echo "</form>";
             echo "<div id='posto-nuovo'></div>";
