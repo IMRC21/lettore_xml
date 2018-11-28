@@ -74,6 +74,7 @@
                 }
             }//Chiuso IF FILE EXISTS
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
+            header("Location: ../../assets/end.html");
         }else{
             echo "<form class='iForm' id='il-form' action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
