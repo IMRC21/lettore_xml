@@ -32,6 +32,7 @@
             $xmlBase = "<?xml version='1.0' encoding='UTF-8'?>
 <persone>
 </persone>
+
             ";
             $nome = $_POST["nome"];
             $cognome = $_POST["cognome"];
@@ -40,11 +41,17 @@
             $nomeFile = $_POST["esp"] . ".xml";
             $xmlObj = new SimpleXMLElement($xmlBase);
             
-            $xmlObj->addChild("persona");
-            $xmlObj->persona->addChild("nome", $nome);
-            $xmlObj->persona->addChild("cognome", $cognome);
-            $xmlObj->persona->addChild("cf", $cf);
+            
+            $persona = $xmlObj->addChild("persona");
+            $persona->addChild("nome", $nome);
+            $persona->addChild("cognome", $cognome);
+            $persona->addChild("cf", $cf);
 
+            $persona = $xmlObj->addChild("persona");
+            $persona->addChild("nome", $nome);
+            $persona->addChild("cognome", $cognome);
+            $persona->addChild("cf", $cf);
+            
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
         }else{
             echo "<form id='ilForm' action='index.php' method='POST'>";
