@@ -12,15 +12,23 @@
 <body>
     <?php
         if($_POST){
-            $nome = $_POST["nome"];
-            $cognome = $_POST["cognome"];
-            $cf = $_POST["cf"];
-            $nomeFile = $_POST["esp"] . ".xml";
+            $str = $_POST["nome"];
+            $nome = array("ciao");
+            $nome[0] = $str;
             
+            $cognome = array($_POST["cognome"]);
+            $cf = array($_POST["cf"]);
+            $nomeFile = $_POST["esp"] . ".xml";
+            $personeInserite = $_POST["nrPersone"];
+            print_r($nome);
 
-            if($_POST["nrPersone"] > 1){
+            if($personeInserite > 1){
                 //Carica più persone
                 Echo "Si, ci sono più persone".PHP_EOL;
+                for($ct = 2; $ct <= $personeInserite; $ct ++){
+                    array_push($nome,$_POST["nome"+ $ct]); 
+                    echo $nome[$ct-1];
+                }
             }
 
             //Una base di partenza per il file XML in caso non esista già
