@@ -52,7 +52,7 @@
             }//Chiuso IF FILE EXISTS
             $file = file_put_contents($nomeFile,$xmlObj->asXML());
         }else{
-            echo "<form id='ilForm' action='index.php' method='POST'>";
+            echo "<form class='iForm' action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
             echo "<input type='text' name='nome'>";
             echo "<label class='testo'>Inserisci il tuo cognome</label>";
@@ -61,7 +61,8 @@
             echo "<input type='text' name='cf'>";
             echo "<label class='testo'>Inserisci il nome di questa esportazione</label>";
             echo "<input type='text' name='esp' value='default'>";
-            echo "<input class='testo' type='button' onclick='aggiungi()' value='Aggiungi un campo'>";
+            echo "<label class='testo'>Numero di persone inserite: </label>";
+            echo "<input type='text' name='nrPersone' value='1' disabled>";
             echo "<input type='submit'>";
             echo "</form>";
             echo "<div id='aggiungi-elemento'></div>";

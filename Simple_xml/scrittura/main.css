@@ -1,21 +1,15 @@
 .testo{
     display: block;
     outline: none;
-
 }
 
-#ilForm{
+.iForm{
     display: inline-block;
     width: 300px;
+    padding: 3%;
+    border: 2px solid black;
 }
 
 .contenitore{
     display: inline;
-}
-
-#aggiungi-elemento{
-    display: inline;
-    width: 300px;
-    height: 220px;
-    background-color: green;
 }
