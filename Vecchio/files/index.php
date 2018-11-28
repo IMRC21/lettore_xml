@@ -18,12 +18,14 @@
             $cf = $_POST["cf"];
             $nomeFile = $_POST["esp"] . ".xml";
             $stdRiga = "<?xml version='1.0' encoding='UTF-8'?>".PHP_EOL; 
+            $root = "<persone>".PHP_EOL;
+            $closeRoot ="</persona>".PHP_EOL;
             $apriTagPersona = "<persona>".PHP_EOL;
             $chiudiTagPersona = "</persona>".PHP_EOL;
             $nomeStampa = "<nome>" . $nome . "</nome>".PHP_EOL;
             $cognomeStampa = "<cognome>" . $cognome . "</cognome>".PHP_EOL;
             $cfStampa = "<cf>" . $cf . "</cf>".PHP_EOL;
-            $stdRiga = $stdRiga . $apriTagPersona . $nomeStampa .$cognomeStampa . $cfStampa . $chiudiTagPersona;
+            $stdRiga = $stdRiga . $root . $apriTagPersona . $nomeStampa .$cognomeStampa . $cfStampa . $chiudiTagPersona . $closeRoot;
             $file = file_put_contents($nomeFile,$stdRiga);
         }else{
             
@@ -39,7 +41,6 @@
             echo "<input class='testo' type='button' onclick='aggiungi()' value='Aggiungi un campo'>";
             echo "<input type='submit'>";
             echo "</form>";
-            
             echo "<div id='aggiungi-elemento'>CIAO STUPIDO</div>";
         }
     ?>
