@@ -25,7 +25,7 @@
             $stdRiga = $stdRiga . $apriTagPersona . $nomeStampa .$cognomeStampa . $cfStampa . $chiudiTagPersona;
             $file = file_put_contents($nomeFile,$stdRiga);
         }else{
-            echo "<div class='contenitore'>";
+            
             echo "<form id='ilForm' action='index.php' method='POST'>";
             echo "<label class='testo'>Inserisci il tuo nome</label>";
             echo "<input type='text' name='nome'>";
@@ -38,8 +38,8 @@
             echo "<input class='testo' type='button' onclick='aggiungi()' value='Aggiungi un campo'>";
             echo "<input type='submit'>";
             echo "</form>";
-            echo "</div>";
-            echo "<div id='aggiungi-elemento'></div>";
+            
+            echo "<div id='aggiungi-elemento'>CIAO STUPIDO</div>";
         }
     ?>
     

@@ -11,11 +11,11 @@
 }
 
 .contenitore{
-    display: inline-block;
+    display: inline;
 }
 
 #aggiungi-elemento{
-    display: inline-block;
+    display: inline;
     width: 300px;
     height: 220px;
     background-color: green;
