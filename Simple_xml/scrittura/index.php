@@ -65,8 +65,7 @@
                     }
                 }//Chiuso IF FILE NOT NULL
                 $contatore = 0;
-            }else{
-                //Il file non esiste
+            }else{//Il file non esiste
                 echo("Il file non esiste");
                 foreach($nome as $n){
                     $persona = $xmlObj->addChild("persona");
@@ -86,12 +85,8 @@
             echo "<input type='text' name='cognome'>";
             echo "<label class='testo'>Inserisci il tuo codice fiscale</label>";
             echo "<input type='text' name='cf'>";
-            //da levare
-            echo "<center>";
             echo "<label class='fuori-form' class='testo'>Inserisci il nome di questa esportazione</label>";
             echo "<input class='fuori-form' type='text' name='esp' value='default'>";       
-            //da levare
-            echo "</center>";
             echo "<label class='testo'>Numero di persone inserite: </label>";
             echo "<input id='aggiungi-elementi' type='text' name='nrPersone' value='1' >";
             echo "<input type='submit'>";
